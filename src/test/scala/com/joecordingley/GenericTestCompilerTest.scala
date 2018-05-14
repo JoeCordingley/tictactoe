@@ -12,7 +12,7 @@ class GenericTestCompilerTest extends FreeSpec with Matchers {
   type TestWriter[A] = Writer[WriterLog,A]
 
   def testCompiler[F[_]](response:F~>Id): F ~> TestWriter = new (F ~> TestWriter) {
-    def apply[A](fa:F[A]):TestWriter[A] = Writer(List(fa),response[A](fa))
+    def apply[A](fa:F[A]):TestWriter[A] = Writer(List(fa),response(fa))
   }
   
 
