@@ -25,7 +25,7 @@ class GenericTestCompilerTest extends FreeSpec with Matchers {
     val playerTwo = dummyPlayer
     val move1 = new Move(FirstRank,SecondFile)
     val playerMove1 = new PlayerMove(playerOne,move1)
-    val move2 = new Move(FirstRank,SecondFile)
+    val move2 = new Move(SecondRank,ThirdFile)
     val moves = Set(move1,move2)
     val f = PlayerInteraction.getMoveAndTell(playerOne,playerTwo,moves)
 
